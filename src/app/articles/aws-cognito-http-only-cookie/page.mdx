@@ -1,0 +1,134 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Christian Nikolov',
+  date: '2021-05-01',
+  title: 'AWS Cognito with HttpOnly Cookie',
+  description:
+    'A guide to getting AWS Cognito working with HttpOnly cookies. Wrap the SDK with Express and return JWT tokens securely.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default ({ children }) => <ArticleLayout article={article}>{children}</ArticleLayout>
+
+AWS Services are great, but around Cognito there isn't clear documentation or indications when it comes to HttpOnly cookies. I hope I can save you some time.
+
+## About me
+
+Hi everyone — I work as a full-time developer, and often I don't have enough time to work on personal projects, probably like many of you. Because of that I have to come up with creative ideas to help me build my personal projects significantly faster. Let me know if I managed to save you time. The main goal of this post is to get you going with AWS Cognito fast.
+
+## Introduction
+
+AWS Cognito comes with an SDK for Node.js: [amazon-cognito-identity-js](https://www.npmjs.com/package/amazon-cognito-identity-js).
+
+We will be wrapping the SDK with our HTTP server (ExpressJS) — it can be anything you want really, as long as you can return JWT tokens through HttpOnly cookies back to the user.
+
+## Get started
+
+### Download the repo
+
+[github.com/cnikolov/aws-cognito-http](https://github.com/cnikolov/aws-cognito-http)
+
+Once done, open your favourite terminal and type:
+
+```bash
+npm i --save
+```
+
+This will install all the packages for you in `node_modules`.
+
+All we need now is to set up Cognito and configure the `.env` file inside the project.
+
+## AWS Cognito — Setup
+
+### Create AWS account
+
+[Amazon Web Services (AWS)](https://aws.amazon.com) — Register an account. It's free and most AWS services are free for a limited time or until a certain point. In general AWS is really good compared to competitors, and prices are similar to their competitors.
+
+### Setup Cognito
+
+Open AWS Management Console and search for **Cognito**.
+
+You will see two types of pools:
+
+- **User pool** — A directory that contains all your app users, along with the configuration for sign-in.
+- **Identity pools** — Particularly useful to grant other users access to your AWS Services.
+
+For this project, User Pools are exactly what we want.
+
+### Name your pool
+
+The convention `YourAppName-Pool` would do the job.
+
+### Configure your pool
+
+The current project works without any extra work with the default settings, but feel free to tweak on your own.
+
+You could choose to login with username and email from here, which is quite common nowadays.
+
+If you have any custom attributes that are not in the attributes section, AWS has you covered — you can add them too (like shoe size). Just a few things and you're done.
+
+### Create Policy
+
+With policies you can configure the complexity of passwords and add your own requirements. In addition, you can make your sign-up invite-only by just ticking a box.
+
+### MFA and Verification
+
+If you made it this far, well done — there's not much left.
+
+If your application is involved with payments or there is sensitive information on your website, keep your customers secure and offer them the option of MFA. This project doesn't have MFA for simplicity.
+
+If you want to set up verification with email or phone, this is the place to configure it. Just select the attribute that you want to verify. Note that Cognito uses AWS SNS behind the scenes — check the pricing before deciding your option. For our project I selected email, which seems to be the cheapest option I ever came across.
+
+### Authentication
+
+Last one — hurray!
+
+For our project we are using JWT tokens and refresh tokens to extend the life of our JWT. Please select those as shown in the AWS console.
+
+Now we're ready to jump back to the code.
+
+## Configure the project
+
+1. Rename `sample.env` to `.env` — make sure this file is not published anywhere and only you have access to it.
+2. Fill with your Amazon credentials:
+
+```
+USER_POOL_ID=AMAZONUSERPOOLID
+CLIENT_ID=AMAZONCLIENTID
+```
+
+3. Listen to URL and port config:
+
+```
+HOST_URL=localhost
+PORT=3001
+```
+
+4. If you're interested in setting CORS, fill this optional. If you leave it blank it will be set to `*`:
+
+```
+CLIENT_DOMAIN=yourappurl.com
+```
+
+5. Run the project:
+
+```bash
+npm run dev
+```
+
+## Where is the cheese?
+
+I have added a small collection for Postman so you can try it out. You can also see saved success/error responses for each of the actions to help you develop your app faster.
+
+If you're not familiar with Postman, check out other Medium blog posts — I learned the most from Medium.
+
+## Final words
+
+Thank you for following along with me. I'm certainly not an expert and there are some missing actions that will be added in the near future.
+
+If you like my content, please help me produce more by clicking a clap. I really appreciate it.

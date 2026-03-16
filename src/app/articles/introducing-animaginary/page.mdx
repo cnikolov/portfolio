@@ -1,0 +1,41 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Christian Nikolov',
+  date: '2022-01-01',
+  title: 'Sample Article (Template)',
+  description:
+    'This is a sample article used as a template. It is excluded from the articles list via excludeFromList.',
+  excludeFromList: true,
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default ({ children }) => <ArticleLayout article={article}>{children}</ArticleLayout>
+
+This is a sample article. Use it as a template when creating new blog posts.
+
+## Structure
+
+Each article needs:
+
+- `article` export with title, description, author, date
+- Set `excludeFromList: true` to hide from the articles list
+- MDX content below
+
+## Code example
+
+```js
+export const article = {
+  author: 'Your Name',
+  date: '2024-01-15',
+  title: 'Your Article Title',
+  description: 'Short description for SEO and cards.',
+  excludeFromList: false, // omit or set false to show in list
+}
+```
+
+Replace this content with your actual article.

@@ -1,0 +1,121 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Christian Nikolov',
+  date: '2022-08-01',
+  title: 'Get Distinct List of Objects C# by Different Values',
+  description:
+    'Why Distinct() returns duplicates with nested objects, and how to fix it using DistinctBy, custom IEqualityComparer, or JSON-based comparison.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default ({ children }) => <ArticleLayout article={article}>{children}</ArticleLayout>
+
+Are those two the same?
+
+Did you ever try to call `Distinct` on a list of objects with nested classes or collections? You probably found that you are getting back duplicates. In this article we will see why and how to work around it.
+
+## Quick example
+
+```csharp
+public class Example
+{
+    public string Awesome { get; set; }
+    public string Medium { get; set; }
+    public string Distinct { get; set; }
+    public string Tutorial { get; set; }
+    public IEnumerable<AmazingPerson> AmazingPeople { get; set; }
+    // ← This is always going to be unique even if it has the same property values
+}
+
+var distinctList = myList.Distinct();
+```
+
+There is a problem with `Distinct`: the default implementation considers objects "unique" based on different references. Since `Distinct` uses the default `GetHashCode()` and `Equals()` on each item of your list, when we have a nested object — even if it has the same values — the references will be different.
+
+Now that we understand the problem, what could we do?
+
+## .NET 6 solution
+
+.NET 6 solved this with `DistinctBy`. You could copy the extension method below if you don't have .NET 6:
+
+```csharp
+public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
+    this IEnumerable<TSource> source,
+    Func<TSource, TKey> keySelector)
+{
+    HashSet<TKey> seenKeys = new HashSet<TKey>();
+    foreach (TSource element in source)
+    {
+        if (seenKeys.Add(keySelector(element)))
+        {
+            yield return element;
+        }
+    }
+}
+
+var myDistinctList = myList.DistinctBy(x => x.Medium);
+```
+
+The problem I faced with this approach is that if you have long and complicated objects with nested lists, it would be a waste of time to list every single property of your object and nested lists.
+
+## Custom IEqualityComparer to the rescue
+
+`Distinct` can receive an optional parameter of type `IEqualityComparer`. We can write our own equality comparer to determine when an item is distinct or not:
+
+```csharp
+public class EqualityComparerByJson<T> : IEqualityComparer<T> where T : class
+{
+    private readonly PropertyInfo[] _properties;
+
+    public EqualityComparerByJson()
+    {
+        _properties = typeof(T)
+            .GetProperties(BindingFlags.GetProperty | BindingFlags.Instance | BindingFlags.Public);
+    }
+
+    public bool Equals(T x, T y)
+    {
+        if (x == null && y == null) return true;
+        if (x == null || y == null) return false;
+        var xHashCode = JsonSerializer.Serialize(x).GetHashCode();
+        var yHashCode = JsonSerializer.Serialize(y).GetHashCode();
+        return xHashCode == yHashCode;
+    }
+
+    public int GetHashCode(T obj)
+    {
+        var hashCode = 0;
+        foreach (var propertyInfo in _properties)
+        {
+            // Property is collection — Equals can catch differences
+            if (typeof(IEnumerable).IsAssignableFrom(propertyInfo.PropertyType)
+                && propertyInfo.PropertyType != typeof(string))
+                continue;
+            // Property is object (class) — Equals can catch differences
+            if (!propertyInfo.PropertyType.IsValueType
+                && propertyInfo.PropertyType != typeof(string))
+                continue;
+            var propertyValue = propertyInfo.GetValue(obj, null);
+            hashCode += propertyValue == null ? 0 : propertyValue.GetHashCode();
+        }
+        return hashCode;
+    }
+}
+```
+
+With only two lines of code everywhere in your application, you can now compare objects by their property values, not by reference:
+
+```csharp
+var distinctList = myList.Distinct(new EqualityComparerByJson<NestedObject>());
+```
+
+Thanks for following along. If you know a better solution for large complicated objects with many properties and nested objects or collections, let me know.
+
+**Performance note:** Comparing the hash of the string rather than the string itself is robust, and memory allocation is much better this way.
+
+Thanks for reading.

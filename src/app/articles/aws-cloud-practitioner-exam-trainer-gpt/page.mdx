@@ -1,0 +1,55 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Christian Nikolov',
+  date: '2024-12-01',
+  title: 'AWS Cloud Practitioner Exam Trainer — Custom GPT with Real-World Questions',
+  description:
+    'A custom ChatGPT that trains you for the AWS Cloud Practitioner exam with real-world Q&A. Score 90%+ three times in a row to guarantee a pass.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default ({ children }) => <ArticleLayout article={article}>{children}</ArticleLayout>
+
+I built a custom GPT to help people prepare for the **AWS Certified Cloud Practitioner** exam. It uses real-world questions and answers, and the idea is simple: if you can score above 90% three times in a row, you are ready to pass the exam.
+
+## What it does
+
+The [Cloud Exam Trainer](https://chatgpt.com/g/g-67a5e0b1237081918639fe5eedde7d79-cloud-exam-trainer) GPT:
+
+- Asks **real-world exam-style questions** covering all Cloud Practitioner domains
+- Gives **detailed explanations** for each answer
+- Tracks your progress and adapts to weak areas
+- Uses a **pass guarantee**: score 90%+ three times in a row and you are ready for the real exam
+
+## How to use it
+
+1. Open the [Cloud Exam Trainer](https://chatgpt.com/g/g-67a5e0b1237081918639fe5eedde7d79-cloud-exam-trainer) (requires ChatGPT Plus).
+2. Start a new chat and ask for a practice session.
+3. Answer the questions one by one — the GPT will give you feedback after each answer.
+4. Keep going until you hit 90%+ three sessions in a row.
+
+## Tip: Get questions one at a time
+
+To avoid overload, ask the GPT to **send questions one by one**. For example:
+
+- *"Give me one question at a time. Wait for my answer before giving the next one."*
+- *"Quiz me one question at a time. Explain the answer after I respond."*
+
+This keeps the flow focused and makes it easier to learn from each explanation before moving on.
+
+## Why I built it
+
+I passed the AWS Solutions Architect Associate exam and know how useful targeted practice is. The Cloud Practitioner is an entry-level cert, but the official materials can feel dry. This GPT gives you exam-style practice with immediate feedback, so you can study more efficiently.
+
+## Try it
+
+[Cloud Exam Trainer on ChatGPT](https://chatgpt.com/g/g-67a5e0b1237081918639fe5eedde7d79-cloud-exam-trainer)
+
+Also listed in my [Projects](/projects) page.
+
+Good luck with your exam.
