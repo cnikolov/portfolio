@@ -48,6 +48,11 @@ export function PhotoCarousel({
               rotate: 0,
               transition: { type: 'spring', stiffness: 300, damping: 20 },
             }}
+            whileTap={{
+              scale: 0.97,
+              rotate: 0,
+              transition: { type: 'spring', stiffness: 400, damping: 15 },
+            }}
           >
             <div className="aspect-9/10">
               <Image

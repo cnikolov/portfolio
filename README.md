@@ -2,7 +2,7 @@
 
 Personal portfolio and blog built with Next.js, Tailwind CSS, and MDX. Fully statically generated.
 
-**Live:** [christiannikolov.com](https://christiannikolov.com)
+**Live:** [cnikolov.vercel.app](https://cnikolov.vercel.app)
 
 ## Running locally
 

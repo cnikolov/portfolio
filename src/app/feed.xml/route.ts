@@ -4,7 +4,7 @@ import { getAllArticles } from '@/lib/articles'
 
 export const dynamic = 'force-static'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://christiannikolov.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cnikolov.vercel.app'
 
 export async function GET() {
   let author = {

@@ -3,7 +3,7 @@ export const dynamic = 'force-static'
 import { getAllArticles } from '@/lib/articles'
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://christiannikolov.com'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cnikolov.vercel.app'
 
 export default async function sitemap() {
   let articles = await getAllArticles()

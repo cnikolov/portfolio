@@ -5,7 +5,7 @@ import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://christiannikolov.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cnikolov.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

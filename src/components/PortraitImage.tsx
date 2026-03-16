@@ -9,6 +9,7 @@ export function PortraitImage() {
     <motion.div
       initial={{ rotate: 3 }}
       whileHover={{ rotate: -3, scale: 1.02 }}
+      whileTap={{ rotate: -5, scale: 0.98 }}
       transition={{
         type: 'spring',
         stiffness: 300,
