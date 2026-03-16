@@ -1,9 +1,7 @@
-import { type MetadataRoute } from 'next'
-
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://christiannikolov.com'
 
-export default function robots(): MetadataRoute['robots'] {
+export default function robots() {
   return {
     rules: [
       {

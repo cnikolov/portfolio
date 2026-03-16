@@ -1,54 +1,53 @@
-import { type MetadataRoute } from 'next'
 import { getAllArticles } from '@/lib/articles'
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://christiannikolov.com'
 
-export default async function sitemap(): Promise<MetadataRoute['sitemap']> {
+export default async function sitemap() {
   let articles = await getAllArticles()
 
-  let articleEntries: MetadataRoute['sitemap'] = articles.map((article) => ({
+  let articleEntries = articles.map((article) => ({
     url: `${siteUrl}/articles/${article.slug}`,
     lastModified: new Date(article.date),
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
-  let staticPages: MetadataRoute['sitemap'] = [
+  let staticPages = [
     {
       url: siteUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
       url: `${siteUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${siteUrl}/cv`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${siteUrl}/articles`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
       url: `${siteUrl}/projects`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${siteUrl}/uses`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.5,
     },
   ]
