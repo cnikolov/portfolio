@@ -7,6 +7,8 @@ import portraitImage from '@/images/photos/christian-young-bw.jpg'
 export function PortraitImage() {
   return (
     <motion.div
+      className="cursor-pointer"
+      style={{ touchAction: 'pan-y' }}
       initial={{ rotate: 3 }}
       whileHover={{ rotate: -3, scale: 1.02 }}
       whileTap={{ rotate: -5, scale: 0.98 }}

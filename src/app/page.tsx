@@ -224,10 +224,10 @@ function Resume() {
 }
 
 const photos = [
-  { src: britishIronworks, alt: 'Spartan helmets at the British Ironwork Centre', rotation: 'rotate-2' },
-  { src: heartCharity, alt: 'Dressed as a heart collecting donations for the British Heart Foundation', rotation: '-rotate-2' },
+  { src: swingMeetingRoom, alt: 'The swing meeting table at British Ironwork Centre', rotation: 'rotate-2' },
+  { src: britishIronworks, alt: 'Spartan helmets at the British Ironwork Centre', rotation: '-rotate-2' },
   { src: angelSolutionsStage, alt: 'Presenting at Angel Solutions Innovation Day', rotation: 'rotate-2' },
-  { src: swingMeetingRoom, alt: 'The swing meeting table at British Ironwork Centre', rotation: '-rotate-2' },
+  { src: heartCharity, alt: 'Dressed as a heart collecting donations for the British Heart Foundation', rotation: '-rotate-2' },
   { src: christmasWithDaughter, alt: 'Christmas time with my daughter', rotation: 'rotate-2' },
 ]
 

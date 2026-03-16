@@ -34,9 +34,10 @@ export function PhotoCarousel({
           <motion.div
             key={photo.alt}
             className={clsx(
-              'relative w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              'relative w-44 flex-none cursor-pointer overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
               photo.rotation,
             )}
+            style={{ touchAction: 'pan-y' }}
             variants={photoVariants}
             transition={{
               type: 'spring',
