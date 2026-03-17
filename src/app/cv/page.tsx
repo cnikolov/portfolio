@@ -220,8 +220,8 @@ export default function CV() {
           </Job>
 
           <Job
-            title="Software Developer"
-            company="NDA Gaming (Biggest Sports Books in the UK)"
+            title="Technical Lead, Software Development, Fraud Prevention"
+            company="NDA Gaming (Biggest Sportsbook in the UK)"
             period="2018 — 2020"
           >
             <ul className="list-disc space-y-1 pl-4">
