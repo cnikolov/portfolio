@@ -192,7 +192,7 @@ function Resume() {
     },
     {
       company: 'NDA Gaming',
-      title: 'Software Developer',
+      title: 'Technical Lead, Fraud Prevention',
       start: '2018',
       end: '2020',
     },
