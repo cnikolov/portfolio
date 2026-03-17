@@ -191,16 +191,22 @@ function Resume() {
       end: '2023',
     },
     {
-      company: 'Angel Solutions',
+      company: 'NDA Gaming',
       title: 'Software Developer',
       start: '2018',
       end: '2020',
     },
     {
+      company: 'Angel Solutions',
+      title: 'Software Developer',
+      start: '2016',
+      end: '2018',
+    },
+    {
       company: 'British Ironwork Centre',
       title: 'Software Developer & IT',
       start: '2013',
-      end: '2018',
+      end: '2016',
     },
   ]
 

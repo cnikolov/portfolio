@@ -89,20 +89,24 @@ export default function About() {
               family business &mdash; the British Ironwork Centre &mdash; I
               officially earned my first years as a software developer, diving
               headfirst into the e-commerce realm. I got my hands dirty with
-              SEO, Magento, Angular, AWS, and SQL &mdash; building purchasing
-              reports and learning how every part of an online business fits
-              together.
+              SEO, Magento, Angular, and AWS &mdash; and wrote SQL reports for
+              sales and purchases to accurately schedule shipments and
+              manufacturing to replenish stock. I learned how every part of an
+              online business fits together.
             </p>
             <p>
               Eager to work in a company full of like-minded developers and IT
               people, I set sail &mdash; by road, in my Audi, with a daily
               commute of 55 minutes each way &mdash; to Angel Solutions in
-              Liverpool. Hungry to learn, I managed to work for a few months
-              and then move to Merseyside. I felt the itch to share my coding
-              wisdom, so a friend and I started teaching coding in the centre of
-              Chester. My network expanded and so did possibilities &mdash; I
-              met a lovely recruiting company sponsoring digital events in the
-              area, and an opportunity at Syrenis was revealed.
+              Liverpool. There I got deep into SSRS reporting and heavy SQL,
+              calculating school performance metrics for pupils, schools, local
+              authorities, and regions &mdash; aggregating data at every level.
+              Hungry to learn, I managed to work for a few months and then move
+              to Merseyside. I felt the itch to share my coding wisdom, so a
+              friend and I started teaching coding in the centre of Chester. My
+              network expanded and so did possibilities &mdash; I met a lovely
+              recruiting company sponsoring digital events in the area, and an
+              opportunity at Syrenis was revealed.
             </p>
             <p>
               With the world grappling with COVID-19 and digital acceleration in

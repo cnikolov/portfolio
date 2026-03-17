@@ -221,39 +221,79 @@ export default function CV() {
 
           <Job
             title="Software Developer"
-            company="Angel Solutions"
+            company="NDA Gaming (Biggest Sports Books in the UK)"
             period="2018 — 2020"
           >
             <ul className="list-disc space-y-1 pl-4">
               <li>
-                Designed various SSRS reports for products, suppliers, and
-                orders.
+                Built anti-bot systems using browser automation detection,
+                WebRTC fingerprinting, and graphics fingerprinting.
               </li>
               <li>
-                Built API integrations with marketplaces such as eBay and
-                Amazon.
+                Developed behaviour-learning models to detect suspicious
+                activity patterns on the platform.
               </li>
               <li>
-                Scraping supplier catalogues to enable drop-shipping of
-                products.
+                Implemented performance tracking and fraud prevention pipelines
+                to protect sports book operations.
               </li>
               <li>
-                Implemented an Inventory System with automated purchasing
-                suggestions and multi-level location storage.
+                Further details under NDA.
               </li>
             </ul>
           </Job>
 
           <Job
             title="Software Developer"
-            company="British Ironwork Centre"
-            period="2013 — 2018"
+            company="Angel Solutions"
+            period="2016 — 2018"
           >
             <ul className="list-disc space-y-1 pl-4">
               <li>
-                First professional role — dove headfirst into the e-commerce
-                realm building and maintaining web solutions for a growing
-                family business.
+                Produced SSRS reports calculating school performance metrics
+                &mdash; pupil and school results across local authority areas
+                vs regions, with heavy data aggregation at every level.
+              </li>
+              <li>
+                Wrote complex SQL queries to power reporting dashboards for
+                education sector clients.
+              </li>
+              <li>
+                Built and maintained .NET applications serving local
+                authorities and schools.
+              </li>
+            </ul>
+          </Job>
+
+          <Job
+            title="Software Developer &amp; IT"
+            company="British Ironwork Centre"
+            period="2013 — 2016"
+          >
+            <ul className="list-disc space-y-1 pl-4">
+              <li>
+                First professional role &mdash; dove headfirst into the
+                e-commerce realm building and maintaining web solutions for a
+                growing family business.
+              </li>
+              <li>
+                Built SQL reports for sales and purchases to accurately
+                schedule shipments and manufacturing to replenish stock.
+              </li>
+              <li>
+                Worked across SEO, Magento, Angular, and AWS &mdash; learning
+                how every part of an online business fits together.
+              </li>
+              <li>
+                Built API integrations with marketplaces such as eBay and
+                Amazon.
+              </li>
+              <li>
+                Scraped supplier catalogues to enable drop-shipping of products.
+              </li>
+              <li>
+                Implemented an Inventory System with automated purchasing
+                suggestions and multi-level location storage.
               </li>
             </ul>
           </Job>
