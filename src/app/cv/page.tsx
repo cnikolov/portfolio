@@ -143,6 +143,10 @@ export default function CV() {
           >
             <ul className="list-disc space-y-1 pl-4">
               <li>
+                Stack: Node.js, React, Next.js, Webpack, Vite &mdash; with AWS
+                for backend services and Databricks for data pipelines.
+              </li>
+              <li>
                 Oversee GitLab CI/CD and manage the AWS ecosystem (S3,
                 CloudFront, GraphQL, DynamoDB, API Gateway).
               </li>
@@ -151,8 +155,8 @@ export default function CV() {
                 AI toolsets.
               </li>
               <li>
-                Develop proof of concepts — experimenting with SSG, SSR, and
-                various automations.
+                Develop proof of concepts &mdash; experimenting with SSG, SSR,
+                and various automations.
               </li>
               <li>Create internal libraries to simplify processes.</li>
               <li>
@@ -231,8 +235,16 @@ export default function CV() {
           >
             <ul className="list-disc space-y-1 pl-4">
               <li>
+                Backend: C# with emphasis on F# for core fraud-detection
+                services, Kafka for real-time event streaming.
+              </li>
+              <li>
+                Frontend: vanilla JavaScript for browser fingerprinting,
+                WebSocket management, and WebRTC integration.
+              </li>
+              <li>
                 Built anti-bot systems using browser automation detection,
-                WebRTC fingerprinting, and graphics fingerprinting.
+                graphics fingerprinting, and device profiling.
               </li>
               <li>
                 Developed behaviour-learning models to detect suspicious
