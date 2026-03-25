@@ -184,6 +184,11 @@ export default function CV() {
                 Fargate, VPC, and RDS.
               </li>
               <li>
+                Core stack: .NET Core, Node.js, and TypeScript &mdash;
+                building and maintaining Web APIs, worker services, and
+                front-end applications.
+              </li>
+              <li>
                 Leadership &amp; Team Management: Led development on flagship
                 products while supervising front-end and back-end teams,
                 reporting directly to the CTO.
@@ -250,6 +255,10 @@ export default function CV() {
           >
             <ul className="list-disc space-y-1 pl-4">
               <li>
+                Built and maintained .NET (C#) applications serving local
+                authorities and schools, hosted on Rackspace infrastructure.
+              </li>
+              <li>
                 Produced SSRS reports calculating school performance metrics
                 &mdash; pupil and school results across local authority areas
                 vs regions, with heavy data aggregation at every level.
@@ -257,10 +266,6 @@ export default function CV() {
               <li>
                 Wrote complex SQL queries to power reporting dashboards for
                 education sector clients.
-              </li>
-              <li>
-                Built and maintained .NET applications serving local
-                authorities and schools.
               </li>
             </ul>
           </Job>
@@ -273,15 +278,19 @@ export default function CV() {
             <ul className="list-disc space-y-1 pl-4">
               <li>
                 First professional role &mdash; dove headfirst into the
-                e-commerce realm building and maintaining web solutions for a
-                growing family business.
+                e-commerce realm building and maintaining .NET (C#) and
+                Angular web solutions for a growing family business.
+              </li>
+              <li>
+                Hosted on AWS EC2 and CloudFront &mdash; managed
+                infrastructure, deployments, and CDN configuration.
               </li>
               <li>
                 Built SQL reports for sales and purchases to accurately
                 schedule shipments and manufacturing to replenish stock.
               </li>
               <li>
-                Worked across SEO, Magento, Angular, and AWS &mdash; learning
+                Worked across SEO, Magento, and Angular &mdash; learning
                 how every part of an online business fits together.
               </li>
               <li>

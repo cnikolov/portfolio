@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
+import { ReadingProgress } from '@/components/ReadingProgress'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -33,6 +34,8 @@ export function ArticleLayout({
   let { previousPathname } = useContext(AppContext)
 
   return (
+    <>
+    <ReadingProgress />
     <Container className="mt-16 lg:mt-32">
       <div className="xl:relative">
         <div className="mx-auto max-w-2xl">
@@ -66,5 +69,6 @@ export function ArticleLayout({
         </div>
       </div>
     </Container>
+    </>
   )
 }
